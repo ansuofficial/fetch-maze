@@ -1,0 +1,301 @@
+<title>/*__TITLE__*/</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap">
+<style>
+/* Page reset. The claude.ai host adds these two rules; a standalone page needs its own.
+   [hidden] must beat the display values on .layer, or every screen shows at once. */
+body { margin: 0; }
+[hidden] { display: none !important; }
+/* Layout: one full-height canvas. The maze board is a warm-white card centered on cream, with quiet stats under it
+   and an optional joystick beside or below it. A golden dog walks the maze to fetch an orange ball.
+   At rest: Start, the level dots and two quiet pickers, over a faint maze that draws itself.
+   Single light cream look, shared with Keyfall. */
+:root {
+  --cream: #F7F3EA;
+  --floor: #F1ECE1;
+  --card: #FFFDF9;
+  --ink: #1D1D1F;
+  --ink-2: #6E6E73;
+  --ink-3: #A1A1A6;
+  --hair: #E3DCCD;
+  --press: #EDE7DA;
+  --dust: #C9BDA6;
+  --blue: #0071E3;
+  --blue-deep: #0058B0;
+  --blue-tint: #E3EEFB;
+  --orange: #FF9500;
+  --red: #FF3B30;
+  --collar-blue: #0071E3;
+  --collar-green: #2DA44E;
+  --collar-purple: #AF52DE;
+  --collar-pink: #EC4899;
+  --collar-teal: #12A4B8;
+  --collar: var(--collar-blue);   /* the player's color: collar, trail and solved levels. The picker sets it on the stage. */
+  --dog-coat: #D9A15E;
+  --dog-light: #F3D6A6;
+  --dog-dark: #A8703A;
+  --dog-deep: #86572A;
+  --dog-ink: #2A1D15;
+  --dog-tag: #E8B64A;
+  --dog-edge: rgba(92, 58, 24, 0.55);
+  --dog-inner: rgba(120, 78, 34, 0.45);
+  --ring: rgba(0, 113, 227, 0.35);
+  --scrim: rgba(247, 243, 234, 0.82);
+  --shadow-ink: rgba(70, 52, 20, 0.17);
+  --shadow-soft: rgba(70, 52, 20, 0.12);
+  --shadow-tight: rgba(70, 52, 20, 0.05);
+  --shadow-btn: 0 1px 2px rgba(29, 29, 31, 0.10), 0 10px 28px rgba(29, 29, 31, 0.14);
+  --shadow-btn-hover: 0 2px 4px rgba(29, 29, 31, 0.12), 0 16px 36px rgba(29, 29, 31, 0.18);
+  --shadow-card: 0 1px 2px var(--shadow-tight), 0 18px 48px var(--shadow-soft);
+  --ease-glide: cubic-bezier(.33, 1, .68, 1);
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+  --font-text: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+  --font-round: ui-rounded, "SF Pro Rounded", "Nunito", -apple-system, BlinkMacSystemFont, system-ui, "Helvetica Neue", "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-text);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+.stage { position: relative; height: 100%; overflow: hidden; user-select: none; -webkit-user-select: none; touch-action: none; }
+canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+button { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+button:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px; }
+
+/* Start */
+.layer { position: absolute; inset: 0; display: grid; place-items: center; padding: 16px; }
+.start { display: flex; flex-direction: column; align-items: center; gap: 22px; transform: translateY(var(--lift, -25px)); }
+.btn-primary {
+  appearance: none; border: 0; cursor: pointer;
+  font: 600 19px/1 var(--font-display); letter-spacing: -0.01em;
+  color: var(--card); background: var(--ink);
+  height: 58px; padding: 0 56px; border-radius: 999px;
+  box-shadow: var(--shadow-btn);
+  transition: transform .2s cubic-bezier(.2, .8, .2, 1), box-shadow .2s ease, background-color .2s ease;
+}
+
+/* Level dots: one per level, grouped by difficulty, with the tag under each group */
+.pick { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.levels { display: flex; justify-content: center; gap: 8px; }
+.tier { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.dots { display: flex; }
+.ld {
+  appearance: none; border: 0; padding: 0; background: transparent; cursor: pointer;
+  width: var(--ldw, 22px); height: 28px; border-radius: 8px; display: grid; place-items: center;
+}
+.ld::before {
+  content: ""; width: 8px; height: 8px; border-radius: 999px; background: var(--dust);
+  transition: width .3s cubic-bezier(.2, .8, .2, 1), background-color .2s ease, transform .15s ease;
+}
+.ld.solved::before { background: var(--collar); }
+.ld[aria-current]::before { width: calc(var(--ldw, 22px) - 4px); background: var(--ink); }
+.tag {
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  font: 500 11px/1.2 var(--font-text); color: var(--ink-3);
+  padding: 4px 9px; border-radius: 999px; transition: background-color .2s ease, color .2s ease;
+}
+.tier.on .tag { background: var(--press); color: var(--ink); }
+.caption { margin: 0; font: 500 13px/1.3 var(--font-text); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+
+.opts { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; }
+.opt {
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 7px;
+  font: 500 14px/1 var(--font-text); color: var(--ink-2);
+  padding: 9px 12px; border-radius: 10px;
+  transition: background-color .15s ease, color .15s ease;
+}
+.opt svg { width: 8px; height: 12px; color: var(--ink-3); flex: none; }
+.swatch { width: 10px; height: 10px; border-radius: 999px; background: var(--collar); box-shadow: 0 0 0 2px var(--card), 0 0 0 3px var(--hair); flex: none; }
+
+/* In-game readouts: a quiet row under the board, placed by layout() */
+.hud {
+  position: absolute; left: 0; top: 0; width: 0;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px;
+  pointer-events: none; transition: top .45s var(--ease-glide);
+}
+.hud-side { display: flex; gap: 18px; }
+.hud-mid { display: flex; align-items: center; gap: 2px; }
+.m { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.m.r { align-items: flex-end; text-align: right; }
+.m .v { font: 600 15px/1.1 var(--font-round); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; color: var(--ink-2); white-space: nowrap; }
+.m .k { font: 500 11px/1.2 var(--font-text); color: var(--ink-3); }
+.btn-quiet {
+  appearance: none; border: 0; background: transparent; cursor: pointer; pointer-events: auto;
+  font: 500 13px/1 var(--font-text); color: var(--ink-3); white-space: nowrap;
+  padding: 8px 10px; border-radius: 9px;
+  transition: background-color .15s ease, color .15s ease;
+}
+.toggle { display: inline-flex; align-items: center; gap: 7px; }
+.sw { position: relative; width: 22px; height: 13px; border-radius: 999px; background: var(--dust); flex: none; transition: background-color .2s ease; }
+.sw::after {
+  content: ""; position: absolute; top: 2px; left: 2px; width: 9px; height: 9px; border-radius: 50%;
+  background: var(--card); box-shadow: 0 1px 2px var(--shadow-soft); transition: transform .22s cubic-bezier(.2, .8, .2, 1);
+}
+.toggle[aria-checked="true"] { color: var(--ink-2); }
+.toggle[aria-checked="true"] .sw { background: var(--blue); }
+.toggle[aria-checked="true"] .sw::after { transform: translateX(9px); }
+.tip {
+  position: absolute; left: 0; top: 0; width: 0; margin: 0; pointer-events: none;
+  font: 500 13px/1.3 var(--font-text); color: var(--ink-3); text-align: center; text-wrap: balance;
+  transition: top .45s var(--ease-glide);
+}
+
+/* Joystick: a warm-white disc with a knob that leans toward the direction you press */
+.pad {
+  position: absolute; left: 0; top: 0; width: var(--pad, 148px); height: var(--pad, 148px); border-radius: 50%;
+  background: var(--card); border: 1px solid var(--hair); box-shadow: var(--shadow-card);
+  touch-action: none; cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.chev {
+  position: absolute; left: 50%; top: 50%; width: 16px; height: 16px; margin: -8px 0 0 -8px;
+  fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+  color: var(--ink-3); pointer-events: none; transition: color .15s ease;
+}
+.chev[data-dir="0"] { transform: translateY(calc(var(--pad, 148px) * -.38)); }
+.chev[data-dir="1"] { transform: translateX(calc(var(--pad, 148px) * .38)) rotate(90deg); }
+.chev[data-dir="2"] { transform: translateY(calc(var(--pad, 148px) * .38)) rotate(180deg); }
+.chev[data-dir="3"] { transform: translateX(calc(var(--pad, 148px) * -.38)) rotate(-90deg); }
+.chev.on { color: var(--collar); }
+.knob {
+  position: absolute; left: 50%; top: 50%; width: 38%; height: 38%; transform: translate(-50%, -50%);
+  border-radius: 50%; background: var(--floor); border: 1px solid var(--hair);
+  box-shadow: 0 1px 2px var(--shadow-tight), 0 6px 14px var(--shadow-soft);
+  pointer-events: none; transition: transform .32s cubic-bezier(.2, 1.4, .4, 1), background-color .15s ease;
+}
+.pad.held .knob { background: var(--press); transition: background-color .15s ease; }
+
+/* Pause and finish */
+.scrim { background: var(--scrim); }
+.card {
+  width: min(360px, 100%);
+  background: var(--card); border-radius: 22px; box-shadow: var(--shadow-card);
+  padding: 30px 24px 18px; display: flex; flex-direction: column; gap: 22px; text-align: center;
+}
+.card h2 { margin: 0; font: 600 26px/1.15 var(--font-display); letter-spacing: -0.02em; text-wrap: balance; }
+.card p { margin: 6px 0 0; font-size: 15px; line-height: 1.45; color: var(--ink-2); }
+.card kbd {
+  font: 500 12px/1 var(--font-text); color: var(--ink);
+  background: var(--cream); border: 1px solid var(--hair); border-radius: 6px; padding: 3px 7px;
+}
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tile { background: var(--cream); border-radius: 14px; padding: 16px 10px 14px; display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; }
+.tile .v { font: 600 30px/1 var(--font-round); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.tile .k { font: 500 12px/1.2 var(--font-text); color: var(--ink-2); }
+.badge { align-self: center; margin: -8px 0 0; font: 600 12px/1 var(--font-text); color: var(--blue); background: var(--blue-tint); padding: 7px 12px; border-radius: 999px; }
+.note { margin: -8px 0 0; font-size: 13px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.actions { display: flex; flex-direction: column; gap: 4px; }
+.btn-primary.wide { width: 100%; height: 50px; padding: 0 20px; font-size: 17px; }
+.btn-text {
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  font: 500 15px/1 var(--font-text); color: var(--blue);
+  padding: 12px; border-radius: 10px; transition: color .15s ease;
+}
+
+/* Entrances: the scrim fades, cards and the joystick rise with a small spring, a badge pops */
+.hud:not([hidden]), .tip:not([hidden]) { animation: fade-in .35s ease both; }
+.pad:not([hidden]) { animation: rise-in .45s cubic-bezier(.2, .9, .3, 1.15) both; }
+.scrim:not([hidden]) { animation: fade-in .25s ease both; }
+.scrim:not([hidden]) .card { animation: rise-in .45s cubic-bezier(.2, .9, .3, 1.15) both; }
+.scrim:not([hidden]) .badge { animation: badge-in .5s .3s cubic-bezier(.2, 1.4, .4, 1) both; }
+@keyframes fade-in { from { opacity: 0; } }
+@keyframes rise-in { from { opacity: 0; transform: translateY(14px) scale(.97); } }
+@keyframes badge-in { from { opacity: 0; transform: scale(.6); } }
+
+@media (hover: hover) {   /* no sticky hover after a tap on touch screens */
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: var(--shadow-btn-hover); }
+  .opt:hover, .btn-quiet:hover { background: var(--press); color: var(--ink); }
+  .tag:hover { color: var(--ink); }
+  .ld:not([aria-current]):hover::before { transform: scale(1.35); }
+  .btn-text:hover { color: var(--blue-deep); }
+}
+.btn-primary:active { transform: scale(.97); box-shadow: var(--shadow-btn); }   /* after hover, so a press always shrinks */
+@media (max-width: 420px) { .hud { gap: 6px; } .hud-side { gap: 14px; } }
+@media (max-width: 380px) { .narrow-hide { display: none; } .btn-quiet { padding: 8px 7px; } }   /* small phones: moves stay on the finish card */
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary, .opt, .btn-text, .btn-quiet, .tag, .ld::before, .knob, .sw, .sw::after, .hud, .tip { transition: none; }
+  .pad:not([hidden]), .scrim:not([hidden]) .card, .scrim:not([hidden]) .badge { animation: fade-in .2s ease both; }
+}
+</style>
+
+<main class="stage" id="stage">
+  <canvas id="cv" aria-hidden="true"></canvas>
+
+  <div class="hud" id="hud" hidden>
+    <div class="hud-side">
+      <div class="m"><span class="v" id="sTime">0:00.0</span><span class="k">Time</span></div>
+      <div class="m narrow-hide"><span class="v" id="sMoves">0</span><span class="k">Moves</span></div>
+    </div>
+    <div class="hud-mid">
+      <button class="btn-quiet" id="pauseBtn" type="button">Pause</button>
+      <button class="btn-quiet toggle" id="padBtn" type="button" role="switch" aria-checked="false"><i class="sw" aria-hidden="true"></i>Joystick</button>
+    </div>
+    <div class="m r"><span class="v" id="sLevel">Level 1</span><span class="k" id="sTag">Easy</span></div>
+  </div>
+  <p class="tip" id="tip" hidden>Use the arrow keys or WASD to move</p>
+
+  <div class="pad" id="pad" hidden aria-hidden="true">
+    <svg class="chev" data-dir="0" viewBox="0 0 16 16"><path d="M4 10 8 6l4 4"/></svg>
+    <svg class="chev" data-dir="1" viewBox="0 0 16 16"><path d="M4 10 8 6l4 4"/></svg>
+    <svg class="chev" data-dir="2" viewBox="0 0 16 16"><path d="M4 10 8 6l4 4"/></svg>
+    <svg class="chev" data-dir="3" viewBox="0 0 16 16"><path d="M4 10 8 6l4 4"/></svg>
+    <div class="knob" id="knob"></div>
+  </div>
+
+  <section class="layer" id="start">
+    <div class="start">
+      <button class="btn-primary" id="startBtn" type="button">Start</button>
+      <div class="pick">
+        <div class="levels" id="levels" role="group" aria-label="Levels"></div>
+        <p class="caption" id="levelLine" aria-live="polite">Level 1</p>
+      </div>
+      <div class="opts">
+        <button class="opt" id="optColor" type="button"><i class="swatch" aria-hidden="true"></i><span>Blue collar</span><svg viewBox="0 0 8 12" aria-hidden="true"><path d="M1.5 4.5 4 2l2.5 2.5M1.5 7.5 4 10l2.5-2.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="opt" id="optSound" type="button"><span>Sound on</span><svg viewBox="0 0 8 12" aria-hidden="true"><path d="M1.5 4.5 4 2l2.5 2.5M1.5 7.5 4 10l2.5-2.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="layer scrim" id="pause" hidden>
+    <div class="card" role="dialog" aria-modal="true" aria-labelledby="pauseTitle">
+      <div>
+        <h2 id="pauseTitle">Paused</h2>
+        <p id="pauseNote">Press <kbd>Esc</kbd> to keep going.</p>
+      </div>
+      <div class="actions">
+        <button class="btn-primary wide" id="resumeBtn" type="button">Resume</button>
+        <button class="btn-text" id="soundBtn" type="button">Turn sound off</button>
+        <button class="btn-text" id="quitBtn" type="button">Quit to start</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="layer scrim" id="done" hidden>
+    <div class="card" role="dialog" aria-modal="true" aria-labelledby="doneTitle">
+      <div>
+        <h2 id="doneTitle">You made it</h2>
+        <p id="rSub">Level 1 · Easy · 7 × 7</p>
+      </div>
+      <div class="grid">
+        <div class="tile"><span class="v" id="rTime">0:00.0</span><span class="k">Time</span></div>
+        <div class="tile"><span class="v" id="rMoves">0</span><span class="k">Moves</span></div>
+      </div>
+      <p class="note" id="rBest"></p>
+      <div class="actions">
+        <button class="btn-primary wide" id="nextBtn" type="button">Next level</button>
+        <button class="btn-text" id="homeBtn" type="button">Back to start</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+/*__GAME__*/
+</script>

@@ -1,0 +1,1318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Help the dog fetch its ball. A maze game for kids and grown-ups, with a new maze every round.">
+<meta name="theme-color" content="#F7F3EA">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fetch Maze">
+<meta property="og:description" content="Help the dog fetch its ball. A maze game for kids and grown-ups, with a new maze every round.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A golden dog holding an orange ball in front of a maze, with the words: Help the dog fetch its ball.">
+<meta name="twitter:card" content="summary_large_image">
+<title>Fetch Maze</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap">
+<style>
+/* Page reset. The claude.ai host adds these two rules; a standalone page needs its own.
+   [hidden] must beat the display values on .layer, or every screen shows at once. */
+body { margin: 0; }
+[hidden] { display: none !important; }
+/* Layout: one full-height canvas. The maze board is a warm-white card centered on cream, with quiet stats under it
+   and an optional joystick beside or below it. A golden dog walks the maze to fetch an orange ball.
+   At rest: Start, the level dots and two quiet pickers, over a faint maze that draws itself.
+   Single light cream look, shared with Keyfall. */
+:root {
+  --cream: #F7F3EA;
+  --floor: #F1ECE1;
+  --card: #FFFDF9;
+  --ink: #1D1D1F;
+  --ink-2: #6E6E73;
+  --ink-3: #A1A1A6;
+  --hair: #E3DCCD;
+  --press: #EDE7DA;
+  --dust: #C9BDA6;
+  --blue: #0071E3;
+  --blue-deep: #0058B0;
+  --blue-tint: #E3EEFB;
+  --orange: #FF9500;
+  --red: #FF3B30;
+  --collar-blue: #0071E3;
+  --collar-green: #2DA44E;
+  --collar-purple: #AF52DE;
+  --collar-pink: #EC4899;
+  --collar-teal: #12A4B8;
+  --collar: var(--collar-blue);   /* the player's color: collar, trail and solved levels. The picker sets it on the stage. */
+  --dog-coat: #D9A15E;
+  --dog-light: #F3D6A6;
+  --dog-dark: #A8703A;
+  --dog-deep: #86572A;
+  --dog-ink: #2A1D15;
+  --dog-tag: #E8B64A;
+  --dog-edge: rgba(92, 58, 24, 0.55);
+  --dog-inner: rgba(120, 78, 34, 0.45);
+  --ring: rgba(0, 113, 227, 0.35);
+  --scrim: rgba(247, 243, 234, 0.82);
+  --shadow-ink: rgba(70, 52, 20, 0.17);
+  --shadow-soft: rgba(70, 52, 20, 0.12);
+  --shadow-tight: rgba(70, 52, 20, 0.05);
+  --shadow-btn: 0 1px 2px rgba(29, 29, 31, 0.10), 0 10px 28px rgba(29, 29, 31, 0.14);
+  --shadow-btn-hover: 0 2px 4px rgba(29, 29, 31, 0.12), 0 16px 36px rgba(29, 29, 31, 0.18);
+  --shadow-card: 0 1px 2px var(--shadow-tight), 0 18px 48px var(--shadow-soft);
+  --ease-glide: cubic-bezier(.33, 1, .68, 1);
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+  --font-text: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+  --font-round: ui-rounded, "SF Pro Rounded", "Nunito", -apple-system, BlinkMacSystemFont, system-ui, "Helvetica Neue", "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-text);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+.stage { position: relative; height: 100%; overflow: hidden; user-select: none; -webkit-user-select: none; touch-action: none; }
+canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+button { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+button:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px; }
+
+/* Start */
+.layer { position: absolute; inset: 0; display: grid; place-items: center; padding: 16px; }
+.start { display: flex; flex-direction: column; align-items: center; gap: 22px; transform: translateY(var(--lift, -25px)); }
+.btn-primary {
+  appearance: none; border: 0; cursor: pointer;
+  font: 600 19px/1 var(--font-display); letter-spacing: -0.01em;
+  color: var(--card); background: var(--ink);
+  height: 58px; padding: 0 56px; border-radius: 999px;
+  box-shadow: var(--shadow-btn);
+  transition: transform .2s cubic-bezier(.2, .8, .2, 1), box-shadow .2s ease, background-color .2s ease;
+}
+
+/* Level dots: one per level, grouped by difficulty, with the tag under each group */
+.pick { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.levels { display: flex; justify-content: center; gap: 8px; }
+.tier { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.dots { display: flex; }
+.ld {
+  appearance: none; border: 0; padding: 0; background: transparent; cursor: pointer;
+  width: var(--ldw, 22px); height: 28px; border-radius: 8px; display: grid; place-items: center;
+}
+.ld::before {
+  content: ""; width: 8px; height: 8px; border-radius: 999px; background: var(--dust);
+  transition: width .3s cubic-bezier(.2, .8, .2, 1), background-color .2s ease, transform .15s ease;
+}
+.ld.solved::before { background: var(--collar); }
+.ld[aria-current]::before { width: calc(var(--ldw, 22px) - 4px); background: var(--ink); }
+.tag {
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  font: 500 11px/1.2 var(--font-text); color: var(--ink-3);
+  padding: 4px 9px; border-radius: 999px; transition: background-color .2s ease, color .2s ease;
+}
+.tier.on .tag { background: var(--press); color: var(--ink); }
+.caption { margin: 0; font: 500 13px/1.3 var(--font-text); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+
+.opts { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; }
+.opt {
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 7px;
+  font: 500 14px/1 var(--font-text); color: var(--ink-2);
+  padding: 9px 12px; border-radius: 10px;
+  transition: background-color .15s ease, color .15s ease;
+}
+.opt svg { width: 8px; height: 12px; color: var(--ink-3); flex: none; }
+.swatch { width: 10px; height: 10px; border-radius: 999px; background: var(--collar); box-shadow: 0 0 0 2px var(--card), 0 0 0 3px var(--hair); flex: none; }
+
+/* In-game readouts: a quiet row under the board, placed by layout() */
+.hud {
+  position: absolute; left: 0; top: 0; width: 0;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px;
+  pointer-events: none; transition: top .45s var(--ease-glide);
+}
+.hud-side { display: flex; gap: 18px; }
+.hud-mid { display: flex; align-items: center; gap: 2px; }
+.m { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.m.r { align-items: flex-end; text-align: right; }
+.m .v { font: 600 15px/1.1 var(--font-round); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; color: var(--ink-2); white-space: nowrap; }
+.m .k { font: 500 11px/1.2 var(--font-text); color: var(--ink-3); }
+.btn-quiet {
+  appearance: none; border: 0; background: transparent; cursor: pointer; pointer-events: auto;
+  font: 500 13px/1 var(--font-text); color: var(--ink-3); white-space: nowrap;
+  padding: 8px 10px; border-radius: 9px;
+  transition: background-color .15s ease, color .15s ease;
+}
+.toggle { display: inline-flex; align-items: center; gap: 7px; }
+.sw { position: relative; width: 22px; height: 13px; border-radius: 999px; background: var(--dust); flex: none; transition: background-color .2s ease; }
+.sw::after {
+  content: ""; position: absolute; top: 2px; left: 2px; width: 9px; height: 9px; border-radius: 50%;
+  background: var(--card); box-shadow: 0 1px 2px var(--shadow-soft); transition: transform .22s cubic-bezier(.2, .8, .2, 1);
+}
+.toggle[aria-checked="true"] { color: var(--ink-2); }
+.toggle[aria-checked="true"] .sw { background: var(--blue); }
+.toggle[aria-checked="true"] .sw::after { transform: translateX(9px); }
+.tip {
+  position: absolute; left: 0; top: 0; width: 0; margin: 0; pointer-events: none;
+  font: 500 13px/1.3 var(--font-text); color: var(--ink-3); text-align: center; text-wrap: balance;
+  transition: top .45s var(--ease-glide);
+}
+
+/* Joystick: a warm-white disc with a knob that leans toward the direction you press */
+.pad {
+  position: absolute; left: 0; top: 0; width: var(--pad, 148px); height: var(--pad, 148px); border-radius: 50%;
+  background: var(--card); border: 1px solid var(--hair); box-shadow: var(--shadow-card);
+  touch-action: none; cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.chev {
+  position: absolute; left: 50%; top: 50%; width: 16px; height: 16px; margin: -8px 0 0 -8px;
+  fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+  color: var(--ink-3); pointer-events: none; transition: color .15s ease;
+}
+.chev[data-dir="0"] { transform: translateY(calc(var(--pad, 148px) * -.38)); }
+.chev[data-dir="1"] { transform: translateX(calc(var(--pad, 148px) * .38)) rotate(90deg); }
+.chev[data-dir="2"] { transform: translateY(calc(var(--pad, 148px) * .38)) rotate(180deg); }
+.chev[data-dir="3"] { transform: translateX(calc(var(--pad, 148px) * -.38)) rotate(-90deg); }
+.chev.on { color: var(--collar); }
+.knob {
+  position: absolute; left: 50%; top: 50%; width: 38%; height: 38%; transform: translate(-50%, -50%);
+  border-radius: 50%; background: var(--floor); border: 1px solid var(--hair);
+  box-shadow: 0 1px 2px var(--shadow-tight), 0 6px 14px var(--shadow-soft);
+  pointer-events: none; transition: transform .32s cubic-bezier(.2, 1.4, .4, 1), background-color .15s ease;
+}
+.pad.held .knob { background: var(--press); transition: background-color .15s ease; }
+
+/* Pause and finish */
+.scrim { background: var(--scrim); }
+.card {
+  width: min(360px, 100%);
+  background: var(--card); border-radius: 22px; box-shadow: var(--shadow-card);
+  padding: 30px 24px 18px; display: flex; flex-direction: column; gap: 22px; text-align: center;
+}
+.card h2 { margin: 0; font: 600 26px/1.15 var(--font-display); letter-spacing: -0.02em; text-wrap: balance; }
+.card p { margin: 6px 0 0; font-size: 15px; line-height: 1.45; color: var(--ink-2); }
+.card kbd {
+  font: 500 12px/1 var(--font-text); color: var(--ink);
+  background: var(--cream); border: 1px solid var(--hair); border-radius: 6px; padding: 3px 7px;
+}
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tile { background: var(--cream); border-radius: 14px; padding: 16px 10px 14px; display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; }
+.tile .v { font: 600 30px/1 var(--font-round); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.tile .k { font: 500 12px/1.2 var(--font-text); color: var(--ink-2); }
+.badge { align-self: center; margin: -8px 0 0; font: 600 12px/1 var(--font-text); color: var(--blue); background: var(--blue-tint); padding: 7px 12px; border-radius: 999px; }
+.note { margin: -8px 0 0; font-size: 13px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.actions { display: flex; flex-direction: column; gap: 4px; }
+.btn-primary.wide { width: 100%; height: 50px; padding: 0 20px; font-size: 17px; }
+.btn-text {
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  font: 500 15px/1 var(--font-text); color: var(--blue);
+  padding: 12px; border-radius: 10px; transition: color .15s ease;
+}
+
+/* Entrances: the scrim fades, cards and the joystick rise with a small spring, a badge pops */
+.hud:not([hidden]), .tip:not([hidden]) { animation: fade-in .35s ease both; }
+.pad:not([hidden]) { animation: rise-in .45s cubic-bezier(.2, .9, .3, 1.15) both; }
+.scrim:not([hidden]) { animation: fade-in .25s ease both; }
+.scrim:not([hidden]) .card { animation: rise-in .45s cubic-bezier(.2, .9, .3, 1.15) both; }
+.scrim:not([hidden]) .badge { animation: badge-in .5s .3s cubic-bezier(.2, 1.4, .4, 1) both; }
+@keyframes fade-in { from { opacity: 0; } }
+@keyframes rise-in { from { opacity: 0; transform: translateY(14px) scale(.97); } }
+@keyframes badge-in { from { opacity: 0; transform: scale(.6); } }
+
+@media (hover: hover) {   /* no sticky hover after a tap on touch screens */
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: var(--shadow-btn-hover); }
+  .opt:hover, .btn-quiet:hover { background: var(--press); color: var(--ink); }
+  .tag:hover { color: var(--ink); }
+  .ld:not([aria-current]):hover::before { transform: scale(1.35); }
+  .btn-text:hover { color: var(--blue-deep); }
+}
+.btn-primary:active { transform: scale(.97); box-shadow: var(--shadow-btn); }   /* after hover, so a press always shrinks */
+@media (max-width: 420px) { .hud { gap: 6px; } .hud-side { gap: 14px; } }
+@media (max-width: 380px) { .narrow-hide { display: none; } .btn-quiet { padding: 8px 7px; } }   /* small phones: moves stay on the finish card */
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary, .opt, .btn-text, .btn-quiet, .tag, .ld::before, .knob, .sw, .sw::after, .hud, .tip { transition: none; }
+  .pad:not([hidden]), .scrim:not([hidden]) .card, .scrim:not([hidden]) .badge { animation: fade-in .2s ease both; }
+}
+</style>
+</head>
+<body>
+<main class="stage" id="stage">
+  <canvas id="cv" aria-hidden="true"></canvas>
+
+  <div class="hud" id="hud" hidden>
+    <div class="hud-side">
+      <div class="m"><span class="v" id="sTime">0:00.0</span><span class="k">Time</span></div>
+      <div class="m narrow-hide"><span class="v" id="sMoves">0</span><span class="k">Moves</span></div>
+    </div>
+    <div class="hud-mid">
+      <button class="btn-quiet" id="pauseBtn" type="button">Pause</button>
+      <button class="btn-quiet toggle" id="padBtn" type="button" role="switch" aria-checked="false"><i class="sw" aria-hidden="true"></i>Joystick</button>
+    </div>
+    <div class="m r"><span class="v" id="sLevel">Level 1</span><span class="k" id="sTag">Easy</span></div>
+  </div>
+  <p class="tip" id="tip" hidden>Use the arrow keys or WASD to move</p>
+
+  <div class="pad" id="pad" hidden aria-hidden="true">
+    <svg class="chev" data-dir="0" viewBox="0 0 16 16"><path d="M4 10 8 6l4 4"/></svg>
+    <svg class="chev" data-dir="1" viewBox="0 0 16 16"><path d="M4 10 8 6l4 4"/></svg>
+    <svg class="chev" data-dir="2" viewBox="0 0 16 16"><path d="M4 10 8 6l4 4"/></svg>
+    <svg class="chev" data-dir="3" viewBox="0 0 16 16"><path d="M4 10 8 6l4 4"/></svg>
+    <div class="knob" id="knob"></div>
+  </div>
+
+  <section class="layer" id="start">
+    <div class="start">
+      <button class="btn-primary" id="startBtn" type="button">Start</button>
+      <div class="pick">
+        <div class="levels" id="levels" role="group" aria-label="Levels"></div>
+        <p class="caption" id="levelLine" aria-live="polite">Level 1</p>
+      </div>
+      <div class="opts">
+        <button class="opt" id="optColor" type="button"><i class="swatch" aria-hidden="true"></i><span>Blue collar</span><svg viewBox="0 0 8 12" aria-hidden="true"><path d="M1.5 4.5 4 2l2.5 2.5M1.5 7.5 4 10l2.5-2.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="opt" id="optSound" type="button"><span>Sound on</span><svg viewBox="0 0 8 12" aria-hidden="true"><path d="M1.5 4.5 4 2l2.5 2.5M1.5 7.5 4 10l2.5-2.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="layer scrim" id="pause" hidden>
+    <div class="card" role="dialog" aria-modal="true" aria-labelledby="pauseTitle">
+      <div>
+        <h2 id="pauseTitle">Paused</h2>
+        <p id="pauseNote">Press <kbd>Esc</kbd> to keep going.</p>
+      </div>
+      <div class="actions">
+        <button class="btn-primary wide" id="resumeBtn" type="button">Resume</button>
+        <button class="btn-text" id="soundBtn" type="button">Turn sound off</button>
+        <button class="btn-text" id="quitBtn" type="button">Quit to start</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="layer scrim" id="done" hidden>
+    <div class="card" role="dialog" aria-modal="true" aria-labelledby="doneTitle">
+      <div>
+        <h2 id="doneTitle">You made it</h2>
+        <p id="rSub">Level 1 · Easy · 7 × 7</p>
+      </div>
+      <div class="grid">
+        <div class="tile"><span class="v" id="rTime">0:00.0</span><span class="k">Time</span></div>
+        <div class="tile"><span class="v" id="rMoves">0</span><span class="k">Moves</span></div>
+      </div>
+      <p class="note" id="rBest"></p>
+      <div class="actions">
+        <button class="btn-primary wide" id="nextBtn" type="button">Next level</button>
+        <button class="btn-text" id="homeBtn" type="button">Back to start</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+(() => {
+/* ---------- Settings ---------- */
+// Levels grow bigger and twistier as you go. Each tier holds five levels, and values blend from its first level to its last.
+// size: cells per side. twist: how often the carver keeps digging from its newest cell (higher means longer, windier halls).
+// straight: how often a hall keeps its heading (higher means longer straight runs).
+const TIERS = [
+  { tag: "Easy",   sizes: [7, 8, 9, 10, 11],    twist: [0.35, 0.6],  straight: [0.5, 0.35] },
+  { tag: "Medium", sizes: [12, 13, 14, 15, 16], twist: [0.65, 0.85], straight: [0.3, 0.15] },
+  { tag: "Hard",   sizes: [17, 18, 19, 21, 23], twist: [0.9, 1],     straight: [0.1, 0] }
+];
+const PATH = [1.7, 4.8];    // shortest allowed solution, in maze widths, on the first level and on the last
+const MOVE = { step: 0.13, delay: 0.3, every: 0.16 };   // a cell takes `step` seconds. Holding waits `delay`, then steps every `every` seconds.
+const COLLARS = ["blue", "green", "purple", "pink", "teal"];   // each name matches a --collar-* color in the CSS
+const BOARD = { max: 680, cellMax: 56, pad: 18, gap: 16, stats: 34 };   // board limits, padding inside the card, the stats row under it
+const PAD = { size: 148, gap: 24, reach: 20, dead: 12 };   // joystick: size, space from the board, knob travel, dead zone (pixels)
+const DRAG = 18;        // pixels a finger travels on a touch screen before a drag counts
+const T = { intro: 0.5, reveal: 3.2, slide: 0.45, shake: 0.42, flash: 0.45, pop: 0.45, sweep: 0.8, cheer: 1.15 };   // effect timings in seconds
+const SAVE = "fetch-maze-v1";   // the browser storage key for settings and best times
+const TAU = Math.PI * 2;
+const DX = [0, 1, 0, -1], DY = [-1, 0, 1, 0];   // directions: 0 up, 1 right, 2 down, 3 left. Cells keep open sides as bits 1, 2, 4, 8.
+
+const lerp = (a, b, t) => a + (b - a) * t;
+const LEVELS = TIERS.flatMap((tier, ti) => tier.sizes.map((size, i) => {
+  const f = i / (tier.sizes.length - 1);
+  return { tier: ti, tag: tier.tag, size, twist: lerp(tier.twist[0], tier.twist[1], f), straight: lerp(tier.straight[0], tier.straight[1], f) };
+}));
+LEVELS.forEach((lv, i) => {
+  const p = i / (LEVELS.length - 1);
+  lv.n = i + 1;
+  lv.minPath = Math.round(lv.size * lerp(PATH[0], PATH[1], p));
+});
+
+/* ---------- Setup ---------- */
+const $ = id => document.getElementById(id);
+const cv = $("cv"), ctx = cv.getContext("2d"), stage = $("stage"), hud = $("hud"), tip = $("tip"), padEl = $("pad"), knob = $("knob");
+const chevs = [...padEl.querySelectorAll(".chev")];
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const touchFirst = matchMedia("(pointer: coarse)").matches;
+
+const css = getComputedStyle(document.documentElement);
+const tok = n => css.getPropertyValue("--" + n).trim();
+const C = {
+  cream: tok("cream"), floor: tok("floor"), card: tok("card"), ink: tok("ink"), hair: tok("hair"), orange: tok("orange"), red: tok("red"),
+  shadowInk: tok("shadow-ink"), shadowSoft: tok("shadow-soft"), shadowTight: tok("shadow-tight")
+};
+const rgb = h => { const n = parseInt(h.slice(1), 16); return [n >> 16 & 255, n >> 8 & 255, n & 255]; };
+const mix = (a, b, t) => "rgb(" + a.map((v, i) => Math.round(v + (b[i] - v) * t)).join(",") + ")";
+const rgba = (c, a) => "rgba(" + c.join(",") + "," + a + ")";
+const CREAM = rgb(C.cream), CARD = rgb(C.card), INK = rgb(C.ink), HAIR = rgb(C.hair), ORANGE = rgb(C.orange);
+
+const rand = n => Math.random() * n | 0;
+const clamp01 = v => Math.min(1, Math.max(0, v));
+const easeOut = t => 1 - Math.pow(1 - t, 3);
+const easeInOut = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(2 - 2 * t, 3) / 2;
+
+// Everything is kept in one object under SAVE: level, collar, sound, joystick and the best time for each level.
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem(SAVE)) || {}; } catch (e) { /* storage blocked: play without saving */ }
+function store(k, v) {
+  if (v === undefined) return k in saved ? String(saved[k]) : null;
+  saved[k] = v;
+  try { localStorage.setItem(SAVE, JSON.stringify(saved)); } catch (e) { /* ignore */ }
+  return null;
+}
+const bestTime = n => parseInt(store("best-" + n) || "0", 10);
+
+/* ---------- State ---------- */
+// Everything the game knows lives here. step() changes it, draw() only reads it.
+const G = {
+  mode: "start",          // start, play, paused, won (celebrating), done (finish card)
+  level: Math.min(LEVELS.length - 1, Math.max(0, (parseInt(store("level"), 10) || 1) - 1)),   // index into LEVELS
+  collar: Math.max(0, COLLARS.indexOf(store("color"))),
+  sound: store("sound") !== "off",
+  joystick: store("joystick") === "on",   // off unless the player turns it on
+  maze: null,             // { cols, rows, cells, order, start, goal }
+  reveal: null,           // start screen only: the walls still standing while the maze draws itself
+  at: 0, from: 0, t: 0, dir: -1,   // the dog steps from cell `from` to cell `at`, heading `dir`, while t runs from 0 to 1
+  next: -1,               // a press made during a step, taken as soon as the step ends
+  held: -1, holdT: 0,     // a direction held down, and seconds until its next step
+  face: 1, tilt: 0, gait: 0, walk: 0,   // the dog: facing (1 right, -1 left), lean on up and down steps, walk cycle, how much it walks
+  trail: [], route: [],   // every cell visited in order, and the current path back to the start
+  started: false, time: 0, moves: 0, prevBest: 0, newBest: false, firstSolve: false, hinted: false,
+  intro: 1, fromStart: false, slideY: 0, slideT: 1, shake: 0, flash: null, pop: 0, cheer: 0, doneAt: 0,
+  parts: [], rings: []
+};
+
+function applyCollar() {   // the collar and the trail follow the chosen color
+  const hex = tok("collar-" + COLLARS[G.collar]);
+  C.collar = hex; C.trail = mix(CARD, rgb(hex), .16);
+  stage.style.setProperty("--collar", hex);
+}
+
+/* ---------- Maze ---------- */
+const isOpen = (m, c, d) => (m.cells[c] >> d & 1) === 1;
+const toward = (m, c, d) => c + DX[d] + DY[d] * m.cols;
+
+// Growing-tree carver. Every cell links to every other by exactly one path, so a maze is always solvable.
+function carve(cols, rows, twist, straight) {
+  const n = cols * rows, cells = new Uint8Array(n), seen = new Uint8Array(n), came = new Int8Array(n).fill(-1);
+  const order = [], first = rand(n), active = [first];
+  seen[first] = 1;
+  while (active.length) {
+    const i = Math.random() < twist ? active.length - 1 : rand(active.length);
+    const c = active[i], x = c % cols, y = (c / cols) | 0, free = [];
+    for (let d = 0; d < 4; d++) {
+      const nx = x + DX[d], ny = y + DY[d];
+      if (nx >= 0 && ny >= 0 && nx < cols && ny < rows && !seen[ny * cols + nx]) free.push(d);
+    }
+    if (!free.length) { active.splice(i, 1); continue; }
+    let d = free[rand(free.length)];
+    if (free.includes(came[c]) && Math.random() < straight) d = came[c];
+    const next = c + DX[d] + DY[d] * cols;
+    cells[c] |= 1 << d;
+    cells[next] |= 1 << ((d + 2) % 4);
+    seen[next] = 1; came[next] = d; active.push(next);
+    order.push(c, d);   // kept so the start screen can replay the carving
+  }
+  return { cols, rows, cells, order };
+}
+
+// Steps on the path from start to goal (breadth-first search).
+function pathLength(m) {
+  const dist = new Int32Array(m.cells.length).fill(-1), queue = [m.start];
+  dist[m.start] = 0;
+  for (let h = 0; h < queue.length; h++) {
+    const c = queue[h];
+    for (let d = 0; d < 4; d++) {
+      if (!isOpen(m, c, d)) continue;
+      const n = toward(m, c, d);
+      if (dist[n] < 0) { dist[n] = dist[c] + 1; queue.push(n); }
+    }
+  }
+  return dist[m.goal];
+}
+
+function newMaze(animate) {
+  const lv = LEVELS[G.level];
+  let m;
+  for (let tries = 0; tries < 40; tries++) {   // carve again if the solution is too short for the level
+    m = carve(lv.size, lv.size, lv.twist, lv.straight);
+    const corners = [0, m.cols - 1, (m.rows - 1) * m.cols, m.rows * m.cols - 1], k = rand(4);
+    m.start = corners[k]; m.goal = corners[3 - k];   // opposite corners
+    if (pathLength(m) >= lv.minPath) break;
+  }
+  G.maze = m;
+  G.reveal = animate && !reduceMotion ? { bits: new Uint8Array(m.cells.length), k: 0, t: 0 } : null;
+  layout();
+}
+
+/* ---------- Layout ---------- */
+let W = 0, H = 0, DPR = 1;
+const B = { x: 0, y: 0, size: 0, cell: 0, ox: 0, oy: 0, wall: 2, r: 20 };   // board geometry in CSS pixels
+const ROOM = 72;                                     // margin around the cached board for its shadow
+const boardImg = document.createElement("canvas");   // the board card and its shadow, painted once per layout
+
+// With the joystick on, it sits in the right margin when there is room, otherwise under the stats.
+// The start screen keeps the board where play will put it, except that it is centered without the joystick below.
+function layout() {
+  const n = G.maze ? G.maze.cols : LEVELS[G.level].size;
+  const below = BOARD.gap + BOARD.stats, room = G.joystick ? PAD.gap + PAD.size : 0;
+  const limit = Math.min(BOARD.max, n * BOARD.cellMax + BOARD.pad * 2);   // small mazes get a smaller board
+  const beside = Math.min(limit, W - 2 * (16 + room), H - 32 - below);
+  const under = Math.min(limit, W - 32, H - 32 - below - room);
+  const side = G.joystick && beside >= under;
+  const outer = Math.max(140, side ? beside : under);
+  const inset = outer < 440 ? 12 : BOARD.pad;
+  B.cell = Math.max(6, Math.floor((outer - inset * 2) / n));
+  B.size = B.cell * n + inset * 2;
+  B.x = Math.round((W - B.size) / 2);
+  B.y = Math.round((H - B.size - below - (side || G.mode === "start" ? 0 : room)) / 2);
+  B.ox = B.x + inset; B.oy = B.y + inset;
+  B.wall = Math.min(3.5, Math.max(1.5, B.cell * .08));
+  B.r = Math.min(22, B.size * .045);
+  hud.style.left = B.x + 6 + "px";
+  hud.style.width = B.size - 12 + "px";
+  hud.style.top = B.y + B.size + BOARD.gap + "px";
+  tip.style.left = B.x + "px";
+  tip.style.width = B.size + "px";
+  tip.style.top = B.y + B.size + below + 8 + "px";
+  padEl.style.left = (side ? B.x + B.size + PAD.gap : Math.round((W - PAD.size) / 2)) + "px";
+  padEl.style.top = (side ? B.y + B.size - PAD.size : B.y + B.size + below + PAD.gap) + "px";
+  stage.style.setProperty("--pad", PAD.size + "px");
+  stage.style.setProperty("--lift", -below / 2 + "px");   // keeps the start buttons on the board's center
+  stage.style.setProperty("--ldw", Math.max(16, Math.min(22, Math.floor((W - 72) / LEVELS.length))) + "px");
+  paintBoard();
+}
+
+function paintBoard() {
+  const s = B.size + ROOM * 2, b = boardImg.getContext("2d");
+  boardImg.width = Math.round(s * DPR); boardImg.height = Math.round(s * DPR);
+  b.setTransform(DPR, 0, 0, DPR, 0, 0);
+  b.fillStyle = C.card;
+  b.shadowColor = C.shadowSoft; b.shadowBlur = 48 * DPR; b.shadowOffsetY = 18 * DPR;
+  rr(b, ROOM, ROOM, B.size, B.size, B.r); b.fill();
+  b.shadowColor = C.shadowTight; b.shadowBlur = 2 * DPR; b.shadowOffsetY = DPR;
+  b.fill();
+  b.shadowColor = "transparent";
+  b.lineWidth = 1; b.strokeStyle = C.hair;
+  rr(b, ROOM + .5, ROOM + .5, B.size - 1, B.size - 1, B.r - .5); b.stroke();
+}
+
+function resize() {
+  DPR = Math.min(window.devicePixelRatio || 1, 2);
+  W = stage.clientWidth; H = stage.clientHeight;
+  cv.width = Math.round(W * DPR); cv.height = Math.round(H * DPR);
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  layout();
+}
+
+/* ---------- Game flow ---------- */
+function toStart() {
+  releaseInputs();
+  G.mode = "start";
+  G.parts = []; G.rings = []; G.shake = 0; G.flash = null;
+  newMaze(true);
+  $("hud").hidden = true; padEl.hidden = true; $("pause").hidden = true; $("done").hidden = true; $("start").hidden = false;
+  tip.hidden = true; shown.tip = false;
+  renderStart();
+}
+
+function startRound() {
+  const fromStart = G.mode === "start", y0 = B.y, lv = LEVELS[G.level];
+  releaseInputs();
+  G.mode = "play";
+  if (fromStart) { G.reveal = null; layout(); }   // play the maze that was drawing itself behind the Start button
+  else newMaze(false);
+  const m = G.maze;
+  Object.assign(G, {
+    at: m.start, from: m.start, t: 0, dir: -1, next: -1,
+    face: cx(m.goal) >= cx(m.start) ? 1 : -1, tilt: 0, walk: 0,   // the dog starts out facing its ball
+    trail: [m.start], route: [m.start], started: false, time: 0, moves: 0,
+    intro: 0, fromStart, slideY: fromStart ? y0 - B.y : 0, slideT: 0, shake: 0, flash: null, pop: 0, cheer: 0, parts: [], rings: []
+  });
+  const r0 = pieceR(), r1 = Math.max(30, B.cell * 1.6);
+  ring(cx(m.start), cy(m.start), C.collar, r0, r1, .7, .15);   // here you are
+  ring(cx(m.goal), cy(m.goal), C.orange, r0, r1, .7, .35);     // and here is the ball
+  $("start").hidden = true; $("pause").hidden = true; $("done").hidden = true; $("hud").hidden = false; padEl.hidden = !G.joystick;
+  setText("sLevel", "Level " + lv.n); setText("sTag", lv.tag);
+  updateHud();
+  sfx.start();
+}
+
+function advance() {   // after a solve, the next level is the default
+  if (G.level < LEVELS.length - 1) { G.level++; store("level", String(G.level + 1)); }
+}
+
+function setPaused(p) {
+  if (G.mode !== (p ? "play" : "paused")) return;
+  if (p) releaseInputs();
+  G.mode = p ? "paused" : "play";
+  $("pause").hidden = !p;
+}
+
+function setJoystick(on) {   // can change at any time, even mid-round
+  if (on === G.joystick) return;
+  releaseInputs();
+  const y0 = B.y;
+  G.joystick = on;
+  store("joystick", on ? "on" : "off");
+  layout();
+  if (G.mode !== "start") { G.slideY = y0 - B.y; G.slideT = 0; }   // the board glides to make room
+  padEl.hidden = !on || G.mode === "start" || G.mode === "done";
+  renderJoystick();
+  updateHud();
+  sfx.tap();
+}
+
+function win() {
+  const m = G.maze, lv = LEVELS[G.level];
+  releaseInputs();
+  G.mode = "won"; G.dir = -1; G.from = G.at; G.t = 0; G.cheer = 0;
+  G.prevBest = bestTime(lv.n);
+  G.firstSolve = !G.prevBest;
+  G.newBest = G.firstSolve || G.time < G.prevBest;
+  if (G.newBest) store("best-" + lv.n, String(Math.round(G.time)));
+  const x = cx(m.goal), y = cy(m.goal);
+  if (!reduceMotion) G.pop = T.pop;
+  burst(x, y, [C.orange, C.orange, C.collar], 36, 170 + B.cell * 3);
+  ring(x, y, C.orange, pieceR(), B.size * .16, .6);
+  ring(x, y, C.collar, pieceR(), B.size * .24, .75, .08);
+  ring(x, y, C.orange, pieceR(), B.size * .32, .9, .16);
+  updateHud();
+  sfx.win(G.newBest);
+}
+
+function showFinish() {
+  const lv = LEVELS[G.level], el = $("rBest");
+  G.mode = "done"; G.doneAt = performance.now();
+  $("rSub").textContent = `Level ${lv.n} · ${lv.tag} · ${lv.size} × ${lv.size}`;
+  $("rTime").textContent = fmt(G.time);
+  $("rMoves").textContent = G.moves.toLocaleString();
+  if (G.firstSolve) { el.className = "badge"; el.textContent = `Level ${lv.n} solved`; }
+  else if (G.newBest) { el.className = "badge"; el.textContent = "New best time"; }
+  else { el.className = "note"; el.textContent = `Best time ${fmt(G.prevBest)}`; }
+  $("nextBtn").textContent = G.level < LEVELS.length - 1 ? "Next level" : "New maze";
+  $("hud").hidden = true; padEl.hidden = true; tip.hidden = true; shown.tip = false; $("done").hidden = false;
+}
+
+function pickLevel(n) {
+  n = Math.max(0, Math.min(LEVELS.length - 1, n));
+  if (n === G.level || G.mode !== "start") return;
+  const hadFocus = levelDots.includes(document.activeElement);
+  G.level = n;
+  store("level", String(n + 1));
+  renderStart();
+  newMaze(true);   // the faint maze redraws at the new level's size
+  if (hadFocus) levelDots[n].focus();
+  sfx.tap();
+}
+
+function cycleCollar() {
+  G.collar = (G.collar + 1) % COLLARS.length;
+  store("color", COLLARS[G.collar]);
+  applyCollar(); renderStart(); sfx.tap();
+}
+
+function toggleSound() {
+  G.sound = !G.sound;
+  store("sound", G.sound ? "on" : "off");
+  renderSound();
+  sfx.tap();   // only heard when sound just came on
+}
+
+/* ---------- Moving the dog ---------- */
+// One press is one cell. The dog never moves on its own: holding keeps stepping at a calm pace,
+// and letting go stops it at the next cell. Inputs call press() or hold(); draw() shows the result.
+function press(d) {
+  if (G.mode !== "play") return;
+  if (G.dir >= 0) { G.next = d; return; }   // mid-step: take it as soon as this step ends
+  if (!isOpen(G.maze, G.at, d)) return bump(d);
+  if (!G.started) { G.started = true; G.hinted = true; }   // the clock starts on the first move
+  go(d);
+}
+
+function go(d) {
+  G.dir = d; G.from = G.at; G.at = toward(G.maze, G.at, d); G.t = 0;
+  if (d === 1 || d === 3) G.face = d === 1 ? 1 : -1;   // the dog turns to face left or right
+}
+
+function arrive() {
+  const m = G.maze, c = G.at, r = G.route;
+  G.moves++;
+  G.trail.push(c);
+  if (r.length > 1 && r[r.length - 2] === c) r.pop(); else r.push(c);   // stepping back shortens the route
+  G.dir = -1; G.from = c; G.t = 0;
+  if (c === m.goal) return win();
+  sfx.step();
+  if (G.next >= 0) { const d = G.next; G.next = -1; press(d); }
+}
+
+function bump(d) {
+  G.flash = { c: G.at, d, life: T.flash };
+  if (d === 1 || d === 3) G.face = d === 1 ? 1 : -1;   // it looks at the wall it bumped
+  if (!reduceMotion) G.shake = T.shake;
+  sfx.bump();
+}
+
+/* ---------- Effects ---------- */
+function burst(x, y, colors, n, speed) {
+  if (reduceMotion) return;
+  for (let i = 0; i < n; i++) {
+    const a = Math.random() * TAU, sp = speed * (.3 + Math.random() * .7);
+    G.parts.push({ x, y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - speed * .3, life: .6 + Math.random() * .5, r: 1.6 + Math.random() * 2, color: colors[i % colors.length] });
+  }
+}
+
+function ring(x, y, color, r0, r1, life, delay = 0) {
+  G.rings.push({ x, y, color, r0, r1, life, max: life, delay });
+}
+
+/* ---------- Sound ---------- */
+// Small synthesized sounds, so there are no files to load. Nothing plays until the player presses something.
+let audio = null, out = null;
+function ac() {
+  if (!G.sound) return null;
+  try {
+    if (!audio) {
+      audio = new (window.AudioContext || window.webkitAudioContext)();
+      const comp = audio.createDynamicsCompressor();
+      out = audio.createGain(); out.gain.value = .5;
+      out.connect(comp); comp.connect(audio.destination);
+    }
+    if (audio.state === "suspended") audio.resume();
+    return audio;
+  } catch (e) { return null; }
+}
+
+function tone(freq, { at = 0, len = .15, type = "sine", vol = .1, bend = 1 } = {}) {
+  const a = ac();
+  if (!a) return;
+  const t = a.currentTime + at, osc = a.createOscillator(), env = a.createGain();
+  osc.type = type;
+  osc.frequency.setValueAtTime(freq, t);
+  if (bend !== 1) osc.frequency.exponentialRampToValueAtTime(freq * bend, t + len);
+  env.gain.setValueAtTime(.0001, t);
+  env.gain.exponentialRampToValueAtTime(vol, t + .006);
+  env.gain.exponentialRampToValueAtTime(.0001, t + len);
+  osc.connect(env); env.connect(out);
+  osc.start(t); osc.stop(t + len + .03);
+}
+
+const sfx = {
+  step: () => tone(G.moves % 2 ? 540 : 500, { len: .07, vol: .045, bend: .7 }),   // a soft tick for each cell
+  bump: () => { tone(170, { len: .18, type: "triangle", vol: .16, bend: .55 }); tone(85, { len: .2, vol: .12, bend: .8 }); },
+  start: () => { tone(784, { len: .2, vol: .06 }); tone(1175, { at: .1, len: .28, vol: .06 }); },
+  tap: () => tone(1320, { len: .05, vol: .035, bend: .8 }),
+  win: best => {   // a rising chime, plus a sparkle for a best time
+    [1047, 1319, 1568, 2093].forEach((f, i) => { tone(f, { at: i * .08, len: .55, vol: .075 }); tone(f * 2, { at: i * .08, len: .3, vol: .018 }); });
+    if (best) [2637, 3136, 3951].forEach((f, i) => tone(f, { at: .42 + i * .06, len: .35, vol: .03 }));
+  }
+};
+
+/* ---------- Update ---------- */
+function step(dt) {
+  if (G.mode === "paused") return;
+  G.intro = Math.min(1, G.intro + dt / T.intro);
+  G.slideT = Math.min(1, G.slideT + dt / T.slide);
+  G.shake = Math.max(0, G.shake - dt);
+  G.pop = Math.max(0, G.pop - dt);
+  if (G.flash && (G.flash.life -= dt) <= 0) G.flash = null;
+
+  if (G.reveal) {   // start screen: replay the carving, a few walls at a time
+    const r = G.reveal, m = G.maze, total = m.order.length / 2;
+    r.t = Math.min(1, r.t + dt / T.reveal);
+    for (const until = Math.round(easeInOut(r.t) * total); r.k < until; r.k++) {
+      const c = m.order[r.k * 2], d = m.order[r.k * 2 + 1];
+      r.bits[c] |= 1 << d;
+      r.bits[toward(m, c, d)] |= 1 << ((d + 2) % 4);
+    }
+    if (r.t >= 1) G.reveal = null;
+  }
+
+  if (G.mode === "play") {
+    if (G.started) G.time += dt * 1000;
+    if (G.dir >= 0 && (G.t += dt / MOVE.step) >= 1) arrive();
+    if (G.held >= 0 && G.mode === "play") {   // a held direction steps again once it is due and the way is open
+      G.holdT -= dt;
+      if (G.holdT <= 0 && G.dir < 0 && isOpen(G.maze, G.at, G.held)) { go(G.held); G.holdT = MOVE.every; }
+    }
+  }
+  if (G.mode === "won" || G.mode === "done") G.cheer += dt;
+  if (G.mode === "won" && G.cheer >= T.cheer) showFinish();
+
+  // The dog's legs, nod and lean follow its movement, easing in and out so steps blend together
+  const moving = G.dir >= 0, lean = G.dir === 0 ? 1 : G.dir === 2 ? -1 : 0;
+  G.walk += ((moving ? 1 : 0) - G.walk) * Math.min(1, dt * (moving ? 14 : 6));
+  G.gait += dt * TAU / (MOVE.step * 2.4) * G.walk;
+  G.tilt += (lean - G.tilt) * Math.min(1, dt * 10);
+
+  const damp = Math.pow(.08, dt);
+  for (const p of G.parts) { p.x += p.vx * dt; p.y += p.vy * dt; p.vx *= damp; p.vy = p.vy * damp + 420 * dt; p.life -= dt; }
+  for (const o of G.rings) { if (o.delay > 0) o.delay -= dt; else o.life -= dt; }
+  G.parts = G.parts.filter(p => p.life > 0);
+  G.rings = G.rings.filter(o => o.life > 0);
+}
+
+/* ---------- Rendering ---------- */
+const cx = c => B.ox + (c % G.maze.cols + .5) * B.cell;
+const cy = c => B.oy + (((c / G.maze.cols) | 0) + .5) * B.cell;
+const pieceR = () => Math.min(20, B.cell * .3);   // about the size of the dog's body, for rings
+
+function dogPos() {
+  const f = G.dir >= 0 ? 1 - (1 - G.t) * (1 - G.t) : 0;   // each step starts quick and settles softly
+  return { x: cx(G.from) + (cx(G.at) - cx(G.from)) * f, y: cy(G.from) + (cy(G.at) - cy(G.from)) * f };
+}
+
+function rr(c, x, y, w, h, r) {
+  c.beginPath();
+  c.moveTo(x + r, y);
+  c.arcTo(x + w, y, x + w, y + h, r);
+  c.arcTo(x + w, y + h, x, y + h, r);
+  c.arcTo(x, y + h, x, y, r);
+  c.arcTo(x, y, x + w, y, r);
+  c.closePath();
+}
+
+// All walls as one path: the top and left edges, then each cell's right and bottom sides.
+function drawWalls(bits, color, width) {
+  const m = G.maze, s = B.cell, x0 = B.ox, y0 = B.oy;
+  ctx.beginPath();
+  ctx.moveTo(x0, y0 + m.rows * s); ctx.lineTo(x0, y0); ctx.lineTo(x0 + m.cols * s, y0);
+  for (let y = 0; y < m.rows; y++) {
+    for (let x = 0; x < m.cols; x++) {
+      const v = bits[y * m.cols + x], px = x0 + x * s, py = y0 + y * s;
+      if (!(v & 2)) { ctx.moveTo(px + s, py); ctx.lineTo(px + s, py + s); }
+      if (!(v & 4)) { ctx.moveTo(px, py + s); ctx.lineTo(px + s, py + s); }
+    }
+  }
+  ctx.strokeStyle = color; ctx.lineWidth = width; ctx.lineCap = "round"; ctx.lineJoin = "round";
+  ctx.stroke();
+}
+
+// A line through the centers of the first `count` cells, ending at `tail` (usually the dog).
+function strokeCells(cells, count, tail, color, width) {
+  if (!count) return;
+  ctx.beginPath();
+  ctx.moveTo(cx(cells[0]), cy(cells[0]));
+  for (let i = 1; i < count; i++) ctx.lineTo(cx(cells[i]), cy(cells[i]));
+  ctx.lineTo(tail.x, tail.y);
+  ctx.strokeStyle = color; ctx.lineWidth = width; ctx.lineCap = "round"; ctx.lineJoin = "round";
+  ctx.stroke();
+}
+
+// A soft, wide cream patch at the board's center, so the start controls sit on a quiet spot.
+function clearing(alpha) {
+  if (alpha <= 0) return;
+  const r = Math.max(B.size * .42, 170);
+  ctx.save();
+  ctx.translate(B.x + B.size / 2, B.y + B.size / 2);
+  ctx.scale(1.3, 1);
+  const g = ctx.createRadialGradient(0, 0, 0, 0, 0, r);
+  g.addColorStop(0, rgba(CREAM, .97 * alpha)); g.addColorStop(.6, rgba(CREAM, .8 * alpha)); g.addColorStop(1, rgba(CREAM, 0));
+  ctx.fillStyle = g; ctx.fillRect(-r, -r, r * 2, r * 2);
+  ctx.restore();
+}
+
+// The goal: an orange toy ball with two seams, shaded so it looks round.
+function drawBall(x, y, r) {
+  const g = ctx.createRadialGradient(x - r * .35, y - r * .4, r * .1, x, y, r);
+  g.addColorStop(0, mix(ORANGE, CARD, .45)); g.addColorStop(.45, C.orange); g.addColorStop(1, mix(ORANGE, INK, .2));
+  ctx.fillStyle = g;
+  ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill();
+  ctx.save();
+  ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.clip();
+  ctx.strokeStyle = rgba(CARD, .85); ctx.lineWidth = Math.max(.8, r * .14);
+  ctx.beginPath(); ctx.arc(x - r * 1.25, y, r * .95, -.9, .9); ctx.stroke();
+  ctx.beginPath(); ctx.arc(x + r * 1.25, y, r * .95, Math.PI - .9, Math.PI + .9); ctx.stroke();
+  ctx.restore();
+}
+
+/* ---------- The dog ---------- */
+// A golden dog seen from the side, drawn facing right about 100 units long with its paws near y = 30.
+// It is drawn in code so it stays sharp at every size, and it walks, wags, blinks, turns and leans.
+const DOG = {};
+function setupDog() {
+  const coat = rgb(tok("dog-coat")), light = rgb(tok("dog-light")), dark = rgb(tok("dog-dark")), deep = rgb(tok("dog-deep"));
+  const lin = (y0, y1, stops) => { const g = ctx.createLinearGradient(0, y0, 0, y1); stops.forEach(([o, col]) => g.addColorStop(o, col)); return g; };
+  DOG.body = lin(-18, 10, [[0, mix(coat, light, .3)], [.5, mix(coat, light, 0)], [1, mix(coat, dark, .55)]]);
+  DOG.head = lin(-42, -20, [[0, mix(coat, light, .28)], [1, mix(coat, dark, .12)]]);
+  DOG.muzzle = lin(-36, -23, [[0, mix(light, coat, .15)], [1, mix(light, coat, .55)]]);
+  DOG.chest = lin(-10, 10, [[0, mix(light, coat, .5)], [1, mix(light, coat, .2)]]);
+  DOG.ear = lin(-40, -20, [[0, mix(dark, coat, .25)], [1, mix(dark, deep, .45)]]);
+  DOG.legNear = lin(-4, 31, [[0, mix(coat, dark, .1)], [1, mix(coat, dark, .45)]]);
+  DOG.legFar = lin(-4, 31, [[0, mix(dark, deep, .2)], [1, mix(deep, dark, .2)]]);
+  DOG.tail = lin(-38, -8, [[0, mix(coat, light, .25)], [1, mix(coat, dark, .25)]]);
+  DOG.paw = mix(coat, light, .45);
+  DOG.pawFar = mix(dark, deep, .3);
+  DOG.ink = tok("dog-ink"); DOG.inkRgb = rgb(DOG.ink);
+  DOG.tag = tok("dog-tag"); DOG.edge = tok("dog-edge"); DOG.inner = tok("dog-inner");
+}
+
+// o: { x, y, size, face, tilt, gait, walk, wag, blink, hop, hold }
+function drawDog(o) {
+  const s = o.size / 100, w = o.walk, A = .44 * w, L = 3.4 * w;
+  const out = Math.max(1.3, 1.5 / s);   // outline width in dog units, never under about 1.5 screen pixels
+  const fine = Math.max(.9, .7 / s);    // thin face lines
+  const bob = 1.3 * w * (1 - Math.cos(2 * o.gait)) / 2;
+  ctx.save();
+  ctx.translate(o.x, o.y);
+  ctx.save();   // the shadow stays on the ground while the dog hops
+  ctx.scale(s, s);
+  const sh = 1 - Math.min(.45, o.hop / 34);
+  ctx.fillStyle = C.shadowInk;
+  ctx.beginPath(); ctx.ellipse(o.face * -6, 35.5, 31 * sh, 4.4 * sh, 0, 0, TAU); ctx.fill();
+  ctx.restore();
+  ctx.rotate(o.tilt);
+  ctx.scale(o.face * s, s);
+  ctx.translate(-4, 5 - o.hop - bob);   // put the dog's visual middle on its anchor
+
+  // Legs swing in diagonal pairs, and each paw lifts as it comes forward
+  const leg = (jx, jy, kx, ky, px, py, phase) => {
+    const th = A * Math.sin(o.gait + phase), lift = Math.max(0, -Math.cos(o.gait + phase)) * L;
+    const cs = Math.cos(th), sn = Math.sin(th);
+    const r = (x, y) => [jx + (x - jx) * cs - (y - jy) * sn, jy + (x - jx) * sn + (y - jy) * cs];
+    const k = r(kx, ky), p = r(px, py);
+    return [[jx, jy], [k[0], k[1] - lift * .5], [p[0], p[1] - lift]];
+  };
+  const legs = {
+    farFront: leg(9, -3, 10.5, 13, 10, 28.6, Math.PI),
+    farHind: leg(-27, -4, -31, 15.5, -27.5, 28.6, 0),
+    nearFront: leg(15, -3, 16.5, 13, 16, 28.6, 0),
+    nearHind: leg(-22, -4, -26, 15.5, -22.5, 28.6, Math.PI)
+  };
+  const strokeLeg = (pts, wTop, wLow, style) => {
+    ctx.strokeStyle = style; ctx.lineCap = "round"; ctx.lineJoin = "round";
+    ctx.lineWidth = wTop; ctx.beginPath(); ctx.moveTo(pts[0][0], pts[0][1]); ctx.lineTo(pts[1][0], pts[1][1]); ctx.stroke();
+    ctx.lineWidth = wLow; ctx.beginPath(); ctx.moveTo(pts[1][0], pts[1][1]); ctx.lineTo(pts[2][0], pts[2][1]); ctx.stroke();
+  };
+  const paw = (p, style, grow = 0) => {
+    ctx.fillStyle = style;
+    ctx.beginPath(); ctx.ellipse(p[0] + 1.6, p[1] + .7, 4.3 + grow, 2.5 + grow, 0, 0, TAU); ctx.fill();
+  };
+  const tailPath = () => {
+    ctx.save();
+    ctx.translate(-30, -10); ctx.rotate(o.wag); ctx.translate(30, 10);
+    ctx.beginPath();
+    ctx.moveTo(-28.5, -14);
+    ctx.bezierCurveTo(-34.5, -18, -40.5, -24.5, -43, -34);
+    ctx.bezierCurveTo(-44, -38.5, -40.5, -39.5, -39.2, -35.5);
+    ctx.bezierCurveTo(-37.2, -28, -35, -20, -29, -6.5);
+    ctx.closePath();
+    ctx.restore();
+  };
+  const bodyPath = () => {
+    ctx.beginPath();
+    ctx.moveTo(-31, -9);
+    ctx.bezierCurveTo(-27, -17.5, -12, -17.5, 4, -16.5);
+    ctx.bezierCurveTo(14, -16, 21, -16.5, 25, -8.5);
+    ctx.bezierCurveTo(28.5, -1, 24.5, 8.5, 14.5, 9);
+    ctx.bezierCurveTo(5.5, 9.5, -5, 5, -13, 4);
+    ctx.bezierCurveTo(-23, 3.5, -33, 2.5, -33.5, -4);
+    ctx.bezierCurveTo(-33.5, -6.5, -32.5, -8.3, -31, -9);
+    ctx.closePath();
+  };
+  const hy = .9 * w * Math.sin(2 * o.gait + .7) - 4.5;   // the head nods a little while walking
+  const neckPath = () => {
+    ctx.beginPath();
+    ctx.moveTo(12, -14);
+    ctx.bezierCurveTo(16, -22, 21.5, hy - 27, 27, hy - 31.5);
+    ctx.lineTo(38, hy - 23);
+    ctx.bezierCurveTo(33.5, hy - 14, 30.5, -9, 27, -1);
+    ctx.closePath();
+  };
+  const headPath = () => { ctx.beginPath(); ctx.ellipse(33, hy - 27.5, 10.8, 9.8, -.12, 0, TAU); };
+  const muzzlePath = () => {
+    ctx.beginPath();
+    ctx.moveTo(35.5, hy - 31.5);
+    ctx.bezierCurveTo(42, hy - 32, 48.5, hy - 30, 51, hy - 26.5);
+    ctx.bezierCurveTo(52.6, hy - 23.4, 51.5, hy - 19.8, 47.8, hy - 19.2);
+    ctx.bezierCurveTo(44, hy - 18.6, 39.5, hy - 18.6, 36, hy - 20.8);
+    ctx.closePath();
+  };
+  const sway = .08 * w * Math.sin(2 * o.gait) + .05 * Math.sin(o.wag * 2);
+  const earPath = () => {
+    ctx.save();
+    ctx.translate(28.5, hy - 34); ctx.rotate(sway); ctx.translate(-28.5, -(hy - 34));
+    ctx.beginPath();
+    ctx.moveTo(28.5, hy - 35);
+    ctx.bezierCurveTo(33.5, hy - 36.5, 35.5, hy - 31, 34, hy - 25);
+    ctx.bezierCurveTo(33, hy - 20, 31, hy - 16.2, 27.8, hy - 15.8);
+    ctx.bezierCurveTo(24.6, hy - 15.6, 23.4, hy - 20, 23.9, hy - 25);
+    ctx.bezierCurveTo(24.4, hy - 30.5, 25.4, hy - 34, 28.5, hy - 35);
+    ctx.closePath();
+    ctx.restore();
+  };
+
+  // 1. One outline around the whole dog, so it reads on the warm-white board at any size
+  ctx.strokeStyle = DOG.edge; ctx.lineWidth = out * 2; ctx.lineJoin = "round";
+  [tailPath, bodyPath, neckPath, headPath, muzzlePath, earPath].forEach(p => { p(); ctx.stroke(); });
+  Object.values(legs).forEach(pts => { strokeLeg(pts, 8.6 + out * 2, 6.2 + out * 2, DOG.edge); paw(pts[2], DOG.edge, out); });
+
+  // 2. Fur, back to front: far legs, tail, body, near legs, neck and head
+  strokeLeg(legs.farHind, 10.5, 6, DOG.legFar); paw(legs.farHind[2], DOG.pawFar);
+  strokeLeg(legs.farFront, 8.4, 6, DOG.legFar); paw(legs.farFront[2], DOG.pawFar);
+  tailPath(); ctx.fillStyle = DOG.tail; ctx.fill();
+  bodyPath(); ctx.fillStyle = DOG.body; ctx.fill();
+  ctx.save(); bodyPath(); ctx.clip();   // a lighter chest ruff
+  ctx.fillStyle = DOG.chest; ctx.beginPath(); ctx.ellipse(21.5, 1, 8.5, 10, -.3, 0, TAU); ctx.fill();
+  ctx.restore();
+  strokeLeg(legs.nearHind, 11 + out, 6.3 + out, DOG.inner); strokeLeg(legs.nearHind, 11, 6.3, DOG.legNear); paw(legs.nearHind[2], DOG.paw);
+  strokeLeg(legs.nearFront, 8.6 + out, 6.2 + out, DOG.inner); strokeLeg(legs.nearFront, 8.6, 6.2, DOG.legNear); paw(legs.nearFront[2], DOG.paw);
+  neckPath(); ctx.fillStyle = DOG.head; ctx.fill();
+  headPath(); ctx.fillStyle = DOG.head; ctx.fill();
+  muzzlePath(); ctx.fillStyle = DOG.muzzle; ctx.fill();
+
+  // 3. Face: nose, mouth, eye and brow, then the ear over the back of the head
+  ctx.fillStyle = DOG.ink;
+  ctx.beginPath(); ctx.ellipse(50.4, hy - 25.8, 2.9, 2.3, 0, 0, TAU); ctx.fill();
+  ctx.fillStyle = rgba(CARD, .45);
+  ctx.beginPath(); ctx.ellipse(49.6, hy - 26.7, 1, .6, -.3, 0, TAU); ctx.fill();
+  ctx.strokeStyle = rgba(DOG.inkRgb, .5); ctx.lineWidth = fine; ctx.lineCap = "round";
+  ctx.beginPath(); ctx.moveTo(48.8, hy - 20.6); ctx.quadraticCurveTo(44, hy - 19.2, 40.5, hy - 21.4); ctx.stroke();
+  const ey = hy - 29.6;
+  ctx.fillStyle = DOG.ink;
+  ctx.beginPath(); ctx.ellipse(39.6, ey, 2.2, o.blink ? .35 : 2.4, 0, 0, TAU); ctx.fill();
+  if (!o.blink) { ctx.fillStyle = C.card; ctx.beginPath(); ctx.arc(40.3, ey - .8, .8, 0, TAU); ctx.fill(); }
+  ctx.strokeStyle = DOG.inner; ctx.lineWidth = fine;
+  ctx.beginPath(); ctx.moveTo(37.4, ey - 3.6); ctx.quadraticCurveTo(39.6, ey - 4.8, 41.8, ey - 3.4); ctx.stroke();
+  earPath(); ctx.strokeStyle = DOG.inner; ctx.lineWidth = out; ctx.stroke(); ctx.fillStyle = DOG.ear; ctx.fill();
+
+  // 4. Collar in the player's color, with a small gold tag
+  ctx.strokeStyle = C.collar; ctx.lineWidth = 3.6; ctx.lineCap = "round";
+  ctx.beginPath(); ctx.moveTo(20.5, hy - 19); ctx.quadraticCurveTo(28, hy - 12.5, 34, hy - 11.5); ctx.stroke();
+  ctx.fillStyle = DOG.tag; ctx.strokeStyle = DOG.edge; ctx.lineWidth = .8;
+  ctx.beginPath(); ctx.arc(31.5, hy - 8.5, 2.2, 0, TAU); ctx.fill(); ctx.stroke();
+
+  if (o.hold) drawBall(53, hy - 19, 6);   // fetched
+  ctx.restore();
+}
+
+function draw(now) {
+  const m = G.maze;
+  ctx.fillStyle = C.cream; ctx.fillRect(0, 0, W, H);
+  if (!m) return;
+  if (G.mode === "start") {
+    drawWalls(G.reveal ? G.reveal.bits : m.cells, C.hair, Math.max(1, B.wall * .75));
+    clearing(1);
+    return;
+  }
+
+  const k = easeOut(G.intro), s = B.cell, won = G.mode === "won" || G.mode === "done";
+  const shakeX = G.shake > 0 ? Math.sin((T.shake - G.shake) * TAU * 8) * Math.min(7, B.size * .012) * Math.pow(G.shake / T.shake, 1.5) : 0;
+  ctx.save();
+  ctx.translate(shakeX, G.slideY * (1 - easeOut(G.slideT)));   // the board glides when the layout changes
+
+  ctx.globalAlpha = k;
+  ctx.drawImage(boardImg, B.x - ROOM, B.y - ROOM, B.size + ROOM * 2, B.size + ROOM * 2);
+  if (G.mode === "paused") { ctx.restore(); return; }   // the maze hides while paused, so the clock stays fair
+
+  // Start pad, explored halls, and the current route
+  ctx.fillStyle = C.floor;
+  rr(ctx, cx(m.start) - s * .36, cy(m.start) - s * .36, s * .72, s * .72, s * .2); ctx.fill();
+  const p = dogPos(), r = G.route;
+  strokeCells(G.trail, G.trail.length, p, C.trail, Math.min(30, s * .42));
+  const backing = G.dir >= 0 && r.length > 1 && G.at === r[r.length - 2];
+  strokeCells(r, backing ? r.length - 1 : r.length, p, C.collar, Math.min(6, Math.max(2, s * .1)));
+
+  // Solved: the route lights up from start to goal
+  if (won) {
+    const f = (reduceMotion ? 1 : easeOut(clamp01(G.cheer / T.sweep))) * (r.length - 1), i = Math.floor(f);
+    const a = r[i], b = r[Math.min(i + 1, r.length - 1)];
+    strokeCells(r, i + 1, { x: cx(a) + (cx(b) - cx(a)) * (f - i), y: cy(a) + (cy(b) - cy(a)) * (f - i) }, C.collar, Math.min(12, Math.max(3, s * .24)));
+  }
+
+  // The ball, with a slow breathing halo, until the dog picks it up
+  if (!won) {
+    const gx = cx(m.goal), gy = cy(m.goal), gr = Math.min(16, s * .28);
+    const breathe = reduceMotion ? .5 : .5 + .5 * Math.sin(now * .0035);
+    ctx.fillStyle = C.orange;
+    ctx.globalAlpha = k * (.14 + .1 * breathe);
+    ctx.beginPath(); ctx.arc(gx, gy, gr * (1.6 + .3 * breathe), 0, TAU); ctx.fill();
+    ctx.globalAlpha = k;
+    drawBall(gx, gy, gr);
+  }
+
+  // Walls ink in from the faint start-screen color
+  ctx.globalAlpha = 1;
+  drawWalls(m.cells, mix(HAIR, INK, k), B.wall);
+
+  // Bumped wall glows red for a moment
+  if (G.flash) {
+    const fl = G.flash, x = B.ox + (fl.c % m.cols) * s, y = B.oy + ((fl.c / m.cols) | 0) * s;
+    const seg = [[x, y, x + s, y], [x + s, y, x + s, y + s], [x, y + s, x + s, y + s], [x, y, x, y + s]][fl.d];
+    ctx.globalAlpha = fl.life / T.flash;
+    ctx.strokeStyle = C.red; ctx.lineWidth = B.wall * 1.8; ctx.lineCap = "round";
+    ctx.beginPath(); ctx.moveTo(seg[0], seg[1]); ctx.lineTo(seg[2], seg[3]); ctx.stroke();
+  }
+
+  // The dog: a small flinch away from a bumped wall, a happy hop and fast wag once it has the ball
+  let fx = 0, fy = 0;
+  if (G.flash && !reduceMotion) {
+    const f = Math.sin(Math.PI * Math.min(1, (1 - G.flash.life / T.flash) * 2.2)) * s * .08;
+    fx = -DX[G.flash.d] * f; fy = -DY[G.flash.d] * f;
+  }
+  const t = now / 1000;
+  ctx.globalAlpha = k;
+  drawDog({
+    x: p.x + fx, y: p.y + fy, size: Math.min(64, Math.max(s * 1.05, Math.min(20, s * 1.3))),
+    face: G.face, tilt: -G.tilt * .14 * G.face, gait: G.gait, walk: G.walk,
+    wag: reduceMotion ? .15 : won ? .45 * Math.sin(t * TAU * 5.5) : (.2 + .1 * G.walk) * Math.sin(t * TAU * (1.5 + G.walk)),
+    blink: now % 3800 < 130,
+    hop: G.pop > 0 ? Math.sin(Math.PI * (1 - G.pop / T.pop)) * 12 : 0,
+    hold: won
+  });
+
+  // Rings and particles
+  for (const o of G.rings) {
+    if (o.delay > 0) continue;
+    const tt = 1 - o.life / o.max, e = reduceMotion ? .6 : easeOut(tt);
+    ctx.globalAlpha = (1 - tt) * .55; ctx.strokeStyle = o.color; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(o.x, o.y, o.r0 + (o.r1 - o.r0) * e, 0, TAU); ctx.stroke();
+  }
+  for (const q of G.parts) {
+    ctx.globalAlpha = Math.min(1, q.life * 2); ctx.fillStyle = q.color;
+    ctx.beginPath(); ctx.arc(q.x, q.y, q.r, 0, TAU); ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+  if (G.fromStart && k < 1) clearing(1 - k);   // the start screen's quiet patch dissolves as the board inks in
+  ctx.restore();
+}
+
+/* ---------- Readouts ---------- */
+function fmt(ms) {
+  const tenths = Math.floor(ms / 100), sec = Math.floor(tenths / 10);
+  return `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, "0")}.${tenths % 10}`;
+}
+
+const shown = {};
+function setText(id, text) { if (shown[id] !== text) $(id).textContent = shown[id] = text; }
+
+function updateHud() {
+  setText("sTime", fmt(G.time));
+  setText("sMoves", G.moves.toLocaleString());
+  const showTip = G.mode === "play" && !G.hinted && !G.joystick;   // the first-round tip, until the first move
+  if (shown.tip !== showTip) { shown.tip = showTip; tip.hidden = !showTip; }
+}
+
+// Level dots, built once from LEVELS: one button per level, grouped by tier, with a tag button under each group.
+const levelsEl = $("levels"), levelDots = [], tierEls = [];
+TIERS.forEach((tier, ti) => {
+  const group = document.createElement("div"), dots = document.createElement("div"), tag = document.createElement("button");
+  group.className = "tier"; dots.className = "dots";
+  LEVELS.filter(lv => lv.tier === ti).forEach(lv => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "ld";
+    b.onclick = () => pickLevel(lv.n - 1);
+    levelDots.push(b); dots.append(b);
+  });
+  tag.type = "button"; tag.className = "tag"; tag.textContent = tier.tag;
+  tag.setAttribute("aria-label", `${tier.tag} levels`);
+  tag.onclick = () => {   // jump to the first unsolved level in this tier
+    const inTier = LEVELS.filter(lv => lv.tier === ti);
+    pickLevel((inTier.find(lv => !bestTime(lv.n)) || inTier[0]).n - 1);
+  };
+  group.append(dots, tag); levelsEl.append(group); tierEls.push(group);
+});
+
+function renderStart() {
+  const lv = LEVELS[G.level], best = bestTime(lv.n);
+  levelDots.forEach((b, i) => {
+    const t = bestTime(i + 1), cur = i === G.level;
+    b.classList.toggle("solved", t > 0);
+    if (cur) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current");
+    b.tabIndex = cur ? 0 : -1;   // one tab stop for the dots; arrow keys move along them
+    b.setAttribute("aria-label", `Level ${i + 1}, ${LEVELS[i].tag}` + (t ? `, best ${fmt(t)}` : ""));
+  });
+  tierEls.forEach((el, ti) => el.classList.toggle("on", ti === lv.tier));
+  $("levelLine").textContent = `Level ${lv.n}` + (best ? ` · Best ${fmt(best)}` : "");
+  const name = COLLARS[G.collar], label = name[0].toUpperCase() + name.slice(1) + " collar";
+  $("optColor").querySelector("span").textContent = label;
+  $("optColor").setAttribute("aria-label", `Collar color: ${label}. Activate to change.`);
+  renderSound();
+}
+
+function renderSound() {
+  $("optSound").firstElementChild.textContent = G.sound ? "Sound on" : "Sound off";
+  $("optSound").setAttribute("aria-label", `Sound: ${G.sound ? "on" : "off"}. Activate to change.`);
+  $("soundBtn").textContent = G.sound ? "Turn sound off" : "Turn sound on";
+}
+
+function renderJoystick() { $("padBtn").setAttribute("aria-checked", G.joystick ? "true" : "false"); }
+
+/* ---------- Input ---------- */
+// Keys use physical positions, so WASD also works as ZQSD on French keyboards.
+const KEYS = { ArrowUp: 0, KeyW: 0, ArrowRight: 1, KeyD: 1, ArrowDown: 2, KeyS: 2, ArrowLeft: 3, KeyA: 3 };
+const dirOf = (dx, dy) => Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? 1 : 3) : (dy > 0 ? 2 : 0);
+const nearDiagonal = (dx, dy) => Math.abs(Math.abs(dx) - Math.abs(dy)) < Math.hypot(dx, dy) * .2;
+
+// A key, the joystick or a finger held down: one step now, then more at a calm pace until it lets go. The newest hold wins.
+let holdFrom = null;
+function hold(src, d) { holdFrom = src; G.held = d; G.holdT = MOVE.delay; press(d); }
+function letGo(src) { if (holdFrom === src) { holdFrom = null; G.held = -1; } }
+
+const keysDown = [];   // codes of movement keys held down, newest last
+let swipe = null, touch = null, padId = null, padDir = -1;
+function releaseInputs() {
+  keysDown.length = 0; swipe = null; touch = null; holdFrom = null; G.held = -1; G.next = -1;
+  padId = null; padDir = -1; padEl.classList.remove("held"); knob.style.transform = "";
+  chevs.forEach(c => c.classList.remove("on"));
+}
+
+document.addEventListener("keydown", e => {
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  if (e.code === "KeyM") { if (!e.repeat) toggleSound(); return; }             // M mutes or unmutes anywhere
+  if (e.code === "KeyJ") { if (!e.repeat) setJoystick(!G.joystick); return; }  // J shows or hides the joystick
+  if (e.key === "Escape") {
+    if (G.mode === "play" || G.mode === "paused") { e.preventDefault(); setPaused(G.mode === "play"); }
+    return;
+  }
+  const onButton = e.target.closest && e.target.closest("button");
+  if (e.key === "Enter" && G.mode === "start") { e.preventDefault(); startRound(); return; }   // even with a level dot focused
+  if (e.key === "Enter" && !onButton) {
+    if (G.mode === "paused") { e.preventDefault(); setPaused(false); }
+    else if (G.mode === "done" && performance.now() - G.doneAt > 400) { e.preventDefault(); advance(); startRound(); }
+    return;
+  }
+  const d = KEYS[e.code];
+  if (d === undefined) return;
+  if (G.mode === "start") {   // left and right page through the levels
+    if (d === 1 || d === 3) { e.preventDefault(); pickLevel(G.level + (d === 1 ? 1 : -1)); }
+    return;
+  }
+  if (G.mode !== "play") return;
+  e.preventDefault();
+  if (e.repeat || keysDown.includes(e.code)) return;   // holding is timed by the game, not by key repeat
+  keysDown.push(e.code);
+  hold("key", d);
+});
+document.addEventListener("keyup", e => {
+  const i = keysDown.indexOf(e.code);
+  if (i < 0) return;
+  keysDown.splice(i, 1);
+  if (!keysDown.length) return letGo("key");
+  if (holdFrom === "key") { G.held = KEYS[keysDown[keysDown.length - 1]]; G.holdT = MOVE.delay; }   // a key still held takes over, without an extra step
+});
+
+// Joystick: press a side, or drag the knob like a thumbstick. Holding keeps the dog going.
+function padAt(e) {
+  const box = padEl.getBoundingClientRect();
+  const x = e.clientX - (box.left + box.width / 2), y = e.clientY - (box.top + box.height / 2), len = Math.hypot(x, y);
+  const k = len > PAD.reach ? PAD.reach / len : 1;
+  knob.style.transform = `translate(calc(-50% + ${x * k}px), calc(-50% + ${y * k}px))`;
+  let d = len > PAD.dead ? dirOf(x, y) : -1;
+  if (d >= 0 && padDir >= 0 && d !== padDir && nearDiagonal(x, y)) d = padDir;   // near a diagonal: keep going
+  if (d === padDir) return;
+  padDir = d;
+  chevs.forEach((c, i) => c.classList.toggle("on", i === d));
+  if (d >= 0) hold("pad", d); else letGo("pad");
+}
+function padUp(e) {
+  if (e.pointerId !== padId) return;
+  padId = null; padDir = -1;
+  padEl.classList.remove("held"); knob.style.transform = "";
+  chevs.forEach(c => c.classList.remove("on"));
+  letGo("pad");
+}
+padEl.addEventListener("pointerdown", e => {
+  e.preventDefault(); e.stopPropagation();
+  if (G.mode !== "play" || padId !== null) return;
+  padId = e.pointerId;
+  padEl.setPointerCapture(e.pointerId);
+  padEl.classList.add("held");
+  padAt(e);
+});
+padEl.addEventListener("pointermove", e => {
+  if (e.pointerId !== padId) return;
+  if (e.pointerType === "mouse" && !e.buttons) return padUp(e);   // the button came up where we could not hear it
+  padAt(e);
+});
+["pointerup", "pointercancel", "lostpointercapture"].forEach(type => padEl.addEventListener(type, padUp));
+
+// Touch screens: drag anywhere and the dog steps the way you drag. Keep the finger down to keep going; lift it to stop.
+// A tap never moves the dog. On the start screen, a sideways swipe pages through the levels.
+stage.addEventListener("pointerdown", e => {
+  if (!e.isPrimary || e.button !== 0 || e.target.closest("button, .pad")) return;
+  if (G.mode === "start") {
+    swipe = { id: e.pointerId, x0: e.clientX };
+    stage.setPointerCapture(e.pointerId);
+  } else if (G.mode === "play" && e.pointerType !== "mouse") {   // mouse players use the keys and the joystick
+    touch = { id: e.pointerId, x: e.clientX, y: e.clientY, dir: -1 };
+    stage.setPointerCapture(e.pointerId);
+  }
+});
+stage.addEventListener("pointermove", e => {
+  if (!touch || e.pointerId !== touch.id) return;
+  const dx = e.clientX - touch.x, dy = e.clientY - touch.y;
+  if (Math.hypot(dx, dy) < DRAG) return;
+  let d = dirOf(dx, dy);
+  if (touch.dir >= 0 && d !== touch.dir && nearDiagonal(dx, dy)) d = touch.dir;   // near a diagonal: keep going
+  touch.x = e.clientX; touch.y = e.clientY;   // measure the next turn from here
+  if (d !== touch.dir) { touch.dir = d; hold("touch", d); }
+});
+function pointerEnd(e) {
+  if (swipe && e.pointerId === swipe.id) {
+    const dx = e.clientX - swipe.x0;
+    swipe = null;
+    if (e.type === "pointerup" && Math.abs(dx) > 40) pickLevel(G.level + (dx < 0 ? 1 : -1));
+  }
+  if (touch && e.pointerId === touch.id) { touch = null; letGo("touch"); }
+}
+["pointerup", "pointercancel", "lostpointercapture"].forEach(type => stage.addEventListener(type, pointerEnd));
+window.addEventListener("blur", () => { releaseInputs(); setPaused(true); });
+document.addEventListener("visibilitychange", () => { if (document.hidden) { releaseInputs(); setPaused(true); } });
+
+// A mouse click lets go of the button's focus, so Enter and Space go back to the game. Keyboard users keep their place.
+const clicked = e => { if (e.detail > 0) e.currentTarget.blur(); };
+$("startBtn").onclick = startRound;
+$("optColor").onclick = cycleCollar;
+$("optSound").onclick = toggleSound;
+$("pauseBtn").onclick = e => { clicked(e); setPaused(true); };
+$("padBtn").onclick = e => { clicked(e); setJoystick(!G.joystick); };
+$("resumeBtn").onclick = () => setPaused(false);
+$("soundBtn").onclick = toggleSound;
+$("quitBtn").onclick = toStart;
+$("nextBtn").onclick = () => { advance(); startRound(); };
+$("homeBtn").onclick = () => { advance(); toStart(); };
+
+/* ---------- Start ---------- */
+tip.textContent = touchFirst ? "Drag to move, hold to keep going" : "Use the arrow keys or WASD to move";
+if (touchFirst) $("pauseNote").textContent = "The clock is stopped.";
+applyCollar();
+setupDog();
+renderJoystick();
+new ResizeObserver(resize).observe(stage);
+resize();
+toStart();
+
+let last = performance.now();
+function loop(now) {
+  const dt = Math.min(.05, (now - last) / 1000);
+  last = now;
+  step(dt);
+  if (G.mode === "play") updateHud();
+  draw(now);
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
